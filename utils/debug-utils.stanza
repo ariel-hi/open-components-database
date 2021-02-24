@@ -615,7 +615,7 @@ public defn db-ftdi (pwr:JITXObject, uart:JITXObject) :
         net (pwr.gnd, ftdi-conn.p[1])
         net (pwr.vdd, ftdi-conn.p[3])
         match(port-type(uart)) :
-          (pa:JITXBundle) :
+          (pa:Bundle) :
             if pa == ocdb/bundles/uart :
               net (uart.rx, ftdi-conn.p[4]) 
               net (uart.tx, ftdi-conn.p[5])

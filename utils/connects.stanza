@@ -17,7 +17,7 @@ public defn connect-isolate (a:JITXObject, b:JITXObject) :
   inside pcb-module :
     eval-when true :
       match(port-type(a), port-type(b)) :
-        (pa:JITXBundle, pb:JITXBundle) :
+        (pa:Bundle, pb:Bundle) :
           if pa == i2c and pb == i2c :
             inst buf : ocdb/texas-instruments/ISO1540/component
             net (a.sda, buf.SDA1)
@@ -31,7 +31,7 @@ public defn connect-phy (x:JITXObject, y:JITXObject) :
   inside pcb-module :
     eval-when true :
       match(port-type(x), port-type(y)) :
-        (px:JITXBundle, py:JITXBundle) :
+        (px:Bundle, py:Bundle) :
           if px == rgmii and py == ethernet-1000 :
             inst phy : ocdb/marvell/88E1510-A0-NNB2C000/module
             net (x, phy.rgmii)
@@ -42,7 +42,7 @@ public defn connect-ft232 (x:JITXObject, y:JITXObject) :
   inside pcb-module :
     eval-when true :
       match(port-type(x), port-type(y)) :
-        (px:JITXBundle, py:JITXBundle) :
+        (px:Bundle, py:Bundle) :
           if px == usb-2 and py == uart-with([`dtr `rts]) :
             public inst xcvr : ocdb/future-designs/FT232RL/module
             net (x, xcvr.usb-2)

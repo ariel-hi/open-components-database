@@ -79,7 +79,7 @@ public defn make-voltage-divider (in:JITXObject, out:JITXObject, lo:JITXObject,
 
 defn make-voltage-divider-module (in: JITXObject, out: JITXObject, lo: JITXObject,
                                   v-out: [Double, Double, Double],
-                                  r-hi-cmp: JITXInstanceType, r-lo-cmp: JITXInstanceType,
+                                  r-hi-cmp: InstanceType, r-lo-cmp: InstanceType,
                                   vo: [Double, Double, Double]) :
 
   inside pcb-module :

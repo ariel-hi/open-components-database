@@ -16,7 +16,7 @@ defpackage ocdb/protection:
 public defn esd-clamp (bundle:JITXObject, gnd:JITXObject) :
   inside pcb-module:
     match(port-type(bundle)) :
-      (pb:JITXBundle) :
+      (pb:Bundle) :
         if pb == can :
           inst clamp : ocdb/nexperia/PESD1CAN/component
           net (clamp.c[1] bundle.canh)
